@@ -1,0 +1,15 @@
+<?page title="Auto Generated index.zul"?>
+<window title="Hello World!!" border="normal" width="200px">
+
+<label value="Home page"/>
+
+<hbox>
+<button label="Go User" href="/user.zul"/> <separator/>
+<button label="Go EDITIOR" href="/admin.zul"/> <separator/>
+<button label="Go EDITIOR - User" href="/userAdmin.zul"/> <separator/>
+<button label="About Us" href="/about.zul"/> <separator/>
+
+</hbox>
+
+
+</window>
