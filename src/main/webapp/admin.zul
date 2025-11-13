@@ -3,6 +3,25 @@
 <window title="new page title" border="normal">
 New Content Here!
 
+
+<borderlayout>
+<north>
 <button label="logout" href="/j_spring_security_logout"/>
+</north>
+
+<center>
+<listbox>
+<listitem>
+<listcell value="Nayan"/>
+<listcell value="Name"/>
+</listitem>
+
+</listbox>
+</center>
+</borderlayout>
+
+
+
+
 </window>
 </zk>

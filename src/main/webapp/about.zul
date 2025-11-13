@@ -1,0 +1,9 @@
+<?page title="About" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="About" border="normal" apply="com.iispl.controller.UserController">
+New About page Here!
+
+<button id = "fetchUserData" label="Get Useer"/>
+
+</window>
+</zk>
