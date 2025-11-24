@@ -17,19 +17,20 @@
 		<!-- secure pages -->
 	<intercept-url pattern="/new_file.zul" access="ROLE_USER" />
 				
- <form-login login-page="/login.zul" authentication-failure-url="/login.zul?login_error=1" default-target-url="/index.zul" />
+<!-- Customized login page -->
+ <form-login login-page="/login.zul" authentication-failure-url="/error.zul" default-target-url="/index.zul" />
  
  <!-- login page access -->
  <intercept-url pattern="/login.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
  
 			<!--  landing page -->
-				<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+			<intercept-url pattern="/index.zul" access="ROLE_USER" />
 				
 			<!-- admin page  -->
 			<intercept-url pattern="/admin.zul" access="ROLE_EDITOR" />
 			
 			<!-- admin page  -->
-			<intercept-url pattern="/userAdmin.zul" access="ROLE_EDITOR " />
+			<intercept-url pattern="/userAdmin.zul" access="ROLE_EDITOR" />
 			
 			<!-- user page  -->
 			<intercept-url pattern="/user.zul" access="ROLE_USER " />
@@ -43,16 +44,17 @@
 	</http> 	  
 
 <!-- Authentication via userService class or DB -->
-<authentication-manager>
-		<authentication-provider user-service-ref="userService">
-		 <password-encoder hash="plaintext" />
-		 </authentication-provider>
-		</authentication-manager>
+<!-- 	<authentication-manager>
+		<authentication-provider
+			user-service-ref="userService">
+			<password-encoder hash="plaintext" />
+		</authentication-provider>
+	</authentication-manager> -->
 
 
 
 	<!-- In-Memory Authentication sample -->
-<!--   	<authentication-manager>
+  	<authentication-manager>
 		<authentication-provider>
 			<user-service>
 				<user name="aaa" password="aaa" authorities="ROLE_USER, ROLE_EDITOR" />
@@ -63,6 +65,6 @@
 		</authentication-provider>
 	</authentication-manager>
  
- -->
+ 
 	<global-method-security secured-annotations="enabled" />
 </beans:beans>

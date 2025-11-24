@@ -16,8 +16,10 @@ public class MyUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        System.out.println("\nEntered..");
+
         com.iispl.model.User user = UserDAO.getUserByUsername(username);
+        
+        
         if (user == null) {
             System.out.println("User not found: " + username);
             throw new UsernameNotFoundException("User not found");
